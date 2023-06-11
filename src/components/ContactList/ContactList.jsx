@@ -19,9 +19,9 @@ export const ContactList = () => {
       {error && <b>{error}</b>}
       {contactsList.length > 0 && (
         <ul>
-          {contactsList.map(({ name, phone, id }) => (
+          {contactsList.map(({ name, number, id }) => (
             <li key={id}>
-              {name}: {phone}
+              {name}: {number}
               <DeleteButton
                 type="button"
                 data-id={id}
