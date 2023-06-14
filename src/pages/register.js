@@ -2,7 +2,7 @@ import { Box, Input, Button } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 
-export const RegisterPage = () => {
+const RegisterPage = () => {
   const dispatch = useDispatch();
   const handleSubmit = evt => {
     evt.preventDefault();
@@ -56,3 +56,4 @@ export const RegisterPage = () => {
     </Box>
   );
 };
+export default RegisterPage;

@@ -25,11 +25,13 @@ export const ContactList = () => {
             <ListItem fontSize="26px" key={id}>
               {name}: {number}
               <IconButton
-                color={'black'}
                 colorScheme="blue"
+                size="sm"
+                // w={'20px'}
                 ml={3}
-                aria-label="Delet contact"
-                icon={<CloseIcon />}
+                aria-label="Delete contact"
+                borderRadius={'50%'}
+                icon={<CloseIcon boxSize="10px" color={'black'} />}
                 type="button"
                 data-id={id}
                 onClick={evt => {

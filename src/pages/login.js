@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
 import { Box, Button, Input } from '@chakra-ui/react';
 
-export const LoginPage = () => {
+const LoginPage = () => {
   const dispatch = useDispatch();
   const handleSubmit = evt => {
     evt.preventDefault();
@@ -51,3 +51,4 @@ export const LoginPage = () => {
     </Box>
   );
 };
+export default LoginPage;

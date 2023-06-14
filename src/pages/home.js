@@ -6,3 +6,4 @@ export const HomePage = () => {
     </Center>
   );
 };
+export default HomePage;

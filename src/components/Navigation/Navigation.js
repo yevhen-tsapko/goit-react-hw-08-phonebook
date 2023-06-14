@@ -1,13 +1,20 @@
 import { useSelector } from 'react-redux';
 import { selectAuth } from 'redux/auth/selectors';
 import { NavLink } from 'react-router-dom';
-import { Flex } from '@chakra-ui/react';
+
+import { Flex, Link } from '@chakra-ui/react';
 export const Navigation = () => {
   const { isLoggedIn } = useSelector(selectAuth);
   return (
     <Flex as="nav" gap="15">
-      <NavLink to="/">Home</NavLink>
-      {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
+      <Link as={NavLink} to="/" _activeLink={{ color: 'blue' }}>
+        Home
+      </Link>
+      {isLoggedIn && (
+        <Link as={NavLink} to="/contacts" _activeLink={{ color: 'blue' }}>
+          Contacts
+        </Link>
+      )}
     </Flex>
   );
 };

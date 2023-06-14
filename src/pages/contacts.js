@@ -2,7 +2,7 @@ import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Filter } from 'components/Filter/Filter';
 import { ContactList } from 'components/ContactList/ContactList';
 import { Heading } from '@chakra-ui/react';
-export const ContactsPage = () => {
+const ContactsPage = () => {
   return (
     <div>
       <Heading size={'lg'} textAlign="center">
@@ -19,3 +19,4 @@ export const ContactsPage = () => {
     </div>
   );
 };
+export default ContactsPage;
