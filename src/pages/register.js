@@ -1,3 +1,4 @@
+import { Box, Input } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 
@@ -6,11 +7,11 @@ export const RegisterPage = () => {
   const handleSubmit = evt => {
     evt.preventDefault();
     const form = evt.currentTarget;
-    console.log({
-      name: form.elements.name.value,
-      email: form.elements.email.value,
-      password: form.elements.password.value,
-    });
+    // console.log({
+    //   name: form.elements.name.value,
+    //   email: form.elements.email.value,
+    //   password: form.elements.password.value,
+    // });
     dispatch(
       register({
         name: form.elements.name.value,
@@ -21,20 +22,42 @@ export const RegisterPage = () => {
     form.reset();
   };
   return (
-    <form onSubmit={handleSubmit} autoComplete="off">
-      <label>
+    <Box
+      as="form"
+      m={10}
+      p={10}
+      onSubmit={handleSubmit}
+      autoComplete="off"
+      border="1px"
+      borderColor="black"
+      width="50%"
+    >
+      <Box as="label" display="block" fontSize={20}>
         Name
-        <input type="text" name="name"></input>
-      </label>
-      <label>
+        <Input type="text" name="name" bg="white"></Input>
+      </Box>
+      <Box as="label" display="block" mt={5} fontSize={20}>
         Email
-        <input type="email" name="email"></input>
-      </label>
-      <label>
+        <Input type="email" name="email" bg="white"></Input>
+      </Box>
+      <Box as="label" display="block" mt={5} fontSize={20}>
         Password
-        <input type="password" name="password"></input>
-      </label>
-      <button>Log in</button>
-    </form>
+        <Input type="password" name="password" bg="white"></Input>
+      </Box>
+      <Box
+        as="button"
+        type="submit"
+        display={'block'}
+        mt={5}
+        bg="black"
+        p={2}
+        color="white"
+        borderRadius={5}
+        mr="auto"
+        ml="auto"
+      >
+        Sign up
+      </Box>
+    </Box>
   );
 };

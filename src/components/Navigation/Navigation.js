@@ -1,13 +1,13 @@
 import { useSelector } from 'react-redux';
 import { selectAuth } from 'redux/auth/selectors';
 import { NavLink } from 'react-router-dom';
-
+import { Flex } from '@chakra-ui/react';
 export const Navigation = () => {
   const { isLoggedIn } = useSelector(selectAuth);
   return (
-    <nav>
+    <Flex as="nav" gap="15">
       <NavLink to="/">Home</NavLink>
       {isLoggedIn && <NavLink to="/contacts">Contacts</NavLink>}
-    </nav>
+    </Flex>
   );
 };
