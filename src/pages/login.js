@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
-import { Box, Center, Input } from '@chakra-ui/react';
+import { Box, Button, Input } from '@chakra-ui/react';
 
 export const LoginPage = () => {
   const dispatch = useDispatch();
@@ -28,14 +28,16 @@ export const LoginPage = () => {
     >
       <Box as="label" display="block" mt={5} fontSize={20}>
         Email
-        <Input type="email" name="email"></Input>
+        <Input type="email" name="email" bg="white"></Input>
       </Box>
       <Box as="label" display="block" mt={5} fontSize={20}>
         Password
-        <Input type="password" name="password"></Input>
+        <Input type="password" name="password" bg="white"></Input>
       </Box>
-      <Center
-        as="button"
+      <Button
+        display={'block'}
+        type="submit"
+        as={'button'}
         mt={5}
         bg="black"
         p={2}
@@ -45,7 +47,7 @@ export const LoginPage = () => {
         ml="auto"
       >
         Log in
-      </Center>
+      </Button>
     </Box>
   );
 };

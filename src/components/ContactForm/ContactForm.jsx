@@ -54,7 +54,6 @@ export const ContactForm = () => {
         />
       </Box>
       <IconButton
-        as="button"
         type="submit"
         icon={<AddIcon />}
         mt={4}

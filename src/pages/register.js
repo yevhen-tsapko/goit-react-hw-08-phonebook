@@ -1,4 +1,4 @@
-import { Box, Input } from '@chakra-ui/react';
+import { Box, Input, Button } from '@chakra-ui/react';
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 
@@ -7,11 +7,7 @@ export const RegisterPage = () => {
   const handleSubmit = evt => {
     evt.preventDefault();
     const form = evt.currentTarget;
-    // console.log({
-    //   name: form.elements.name.value,
-    //   email: form.elements.email.value,
-    //   password: form.elements.password.value,
-    // });
+
     dispatch(
       register({
         name: form.elements.name.value,
@@ -44,8 +40,7 @@ export const RegisterPage = () => {
         Password
         <Input type="password" name="password" bg="white"></Input>
       </Box>
-      <Box
-        as="button"
+      <Button
         type="submit"
         display={'block'}
         mt={5}
@@ -57,7 +52,7 @@ export const RegisterPage = () => {
         ml="auto"
       >
         Sign up
-      </Box>
+      </Button>
     </Box>
   );
 };

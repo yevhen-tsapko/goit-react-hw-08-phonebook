@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { logOut } from 'redux/auth/operations';
 import { selectUser } from 'redux/auth/selectors';
-import { Center, Flex, Text, Button, Circle } from '@chakra-ui/react';
+import { Button, Flex, Text, Circle } from '@chakra-ui/react';
 export const UserMenu = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
@@ -11,8 +11,10 @@ export const UserMenu = () => {
         {user.name.toUpperCase()[0]}
       </Circle>
       <Text color="grey">Welcome, {user.name}</Text>
-      <Center
-        as="button"
+      <Button
+        fontSize={20}
+        fontWeight={500}
+        bg={'inherit'}
         p="2"
         borderRadius={4}
         type="button"
@@ -20,10 +22,8 @@ export const UserMenu = () => {
           dispatch(logOut());
         }}
       >
-        <Button fontSize={20} fontWeight={500} bg={'inherit'}>
-          Log out
-        </Button>
-      </Center>
+        Log out
+      </Button>
     </Flex>
   );
 };
