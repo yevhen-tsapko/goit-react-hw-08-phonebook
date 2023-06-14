@@ -1,4 +1,4 @@
-import { Center, Flex } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import { NavLink } from 'react-router-dom';
 export const AuthNavigation = () => {
   return (
